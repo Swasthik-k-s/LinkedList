@@ -99,6 +99,24 @@ public class LinkedList {
 			current.next = null;
 		}
 	}
+	
+	/**
+	 * Method to search the element from the Linked list
+	 * @param data
+	 */
+	public void search(int data) {
+		int count = 0;
+		Node temp = head;
+		while(temp != null) {
+			count++;
+			if(temp.data == data) {
+				System.out.println(data + " found at Position " + count);
+				return;
+			}
+			temp = temp.next;
+		}
+		System.out.println(data + " not found");
+	}
 
 	/**
 	 * Method to print the Linked List
@@ -107,7 +125,6 @@ public class LinkedList {
 		Node temp = head;
 
 		if(temp == null) {
-			System.out.println("Linked List is Empty");
 			return;
 		} else {
 			System.out.println("Linked List");
