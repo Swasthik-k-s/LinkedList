@@ -8,7 +8,7 @@ public class Main {
 		linkedList.addEnd(70);
 		linkedList.addMiddle(30, 2);
 		linkedList.print();
-		linkedList.popHead();
+		linkedList.popLast();
 		linkedList.print();
 	}
 }

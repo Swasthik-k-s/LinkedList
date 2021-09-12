@@ -1,38 +1,38 @@
 package com.linkedlist;
 
 public class LinkedList {
-	
+
 	private Node head;
-	
+
 	private class Node {
 		int data;
 		Node next;
-		
+
 		Node(int data){
 			this.data = data;
 			next = null;
 		}
 	}
-	
+
 	/**
 	 * Method to add Element at the End
 	 * @param data
 	 */
 	public void addEnd(int data) {
 		Node newNode = new Node(data);
-		
+
 		if(head == null) {
 			head = newNode;
 		} else {
 			Node temp = head;
-			
+
 			while(temp.next != null) {
 				temp = temp.next;
 			}
 			temp.next = newNode;
 		}
 	}
-	
+
 	/**
 	 * Method to add Element at the Start
 	 * @param data
@@ -42,7 +42,7 @@ public class LinkedList {
 		newNode.next = head;
 		head = newNode;
 	}
-	
+
 	/**
 	 * Method to add Element at the specific Position
 	 * @param data
@@ -65,7 +65,10 @@ public class LinkedList {
 			current.next = newNode;
 		}
 	}
-	
+
+	/**
+	 * Method to delete first element in Linked list
+	 */
 	public void popHead() {
 		if(head == null) {
 			System.out.println("Linked List is Empty");
@@ -76,20 +79,40 @@ public class LinkedList {
 			temp = null;
 		}
 	}
-	
+
+	/**
+	 * Method to delete last element in Linked list
+	 */
+	public void popLast() {
+		if(head == null) {
+			System.out.println("Linked List is Empty");
+		} else if(head.next == null) {
+			popHead();
+		} else {
+			Node temp = head;
+			Node current = null;
+			while(temp.next != null) {
+				current = temp;
+				temp = temp.next;
+			}
+			System.out.println("Deleted Element = " + temp.data);
+			current.next = null;
+		}
+	}
+
 	/**
 	 * Method to print the Linked List
 	 */
 	public void print() {
 		Node temp = head;
-		
+
 		if(temp == null) {
 			System.out.println("Linked List is Empty");
 			return;
 		} else {
 			System.out.println("Linked List");
 		}
-		
+
 		while(temp.next != null) {
 			System.out.print(temp.data + "->");
 			temp = temp.next;
