@@ -99,7 +99,7 @@ public class LinkedList {
 			current.next = null;
 		}
 	}
-	
+
 	/**
 	 * Method to search the element from the Linked list
 	 * @param data
@@ -118,12 +118,46 @@ public class LinkedList {
 		System.out.println(data + " not found");
 		return 0;
 	}
-	
+
 	public void insertAfter(int node,int data) {
 		int position = search(node);
 		if(position != 0) {
 			addMiddle(data, position + 1);
 		}
+	}
+
+	public void popMiddle(int data) {
+		Node temp = head;
+		if(temp.data == data) {
+			popHead();
+		} else {
+			Node prev = head;
+			temp = temp.next;
+			while(temp != null) {
+				if(temp.data == data) {
+					prev.next = temp.next;
+					System.out.println("Deleted Element = " + temp.data);
+					temp = null;
+					return;
+				} else {
+					prev = temp;
+					temp = temp.next;
+				}
+			}
+			System.out.println(data + " not found");
+		}
+
+	}
+
+	public void size() {
+		Node temp = head;
+		int count = 0;
+
+		while(temp != null) {
+			count ++;
+			temp = temp.next;
+		}
+		System.out.println("Size of Linked List = " + count);
 	}
 
 	/**
