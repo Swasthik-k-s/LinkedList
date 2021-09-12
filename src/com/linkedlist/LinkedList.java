@@ -66,12 +66,29 @@ public class LinkedList {
 		}
 	}
 	
+	public void popHead() {
+		if(head == null) {
+			System.out.println("Linked List is Empty");
+		} else {
+			Node temp = head;
+			head = head.next;
+			System.out.println("Deleted Element = " + temp.data);
+			temp = null;
+		}
+	}
+	
 	/**
 	 * Method to print the Linked List
 	 */
 	public void print() {
 		Node temp = head;
-		System.out.println("Linked List");
+		
+		if(temp == null) {
+			System.out.println("Linked List is Empty");
+			return;
+		} else {
+			System.out.println("Linked List");
+		}
 		
 		while(temp.next != null) {
 			System.out.print(temp.data + "->");
