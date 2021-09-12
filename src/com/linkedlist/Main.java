@@ -10,6 +10,9 @@ public class Main {
 		linkedList.print();
 		linkedList.insertAfter(30, 40);
 		linkedList.print();
+		linkedList.popMiddle(40);
+		linkedList.size();
+		linkedList.print();
 	}
 }
 
