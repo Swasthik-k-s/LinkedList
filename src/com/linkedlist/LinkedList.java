@@ -5,7 +5,6 @@ public class LinkedList {
 	private Node head;
 	
 	private class Node {
-		
 		int data;
 		Node next;
 		
@@ -28,6 +27,12 @@ public class LinkedList {
 			}
 			temp.next = newNode;
 		}
+	}
+	
+	public void addStart(int data) {
+		Node newNode = new Node(data);
+		newNode.next = head;
+		head = newNode;
 	}
 	
 	public void print() {
