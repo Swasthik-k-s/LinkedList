@@ -104,18 +104,26 @@ public class LinkedList {
 	 * Method to search the element from the Linked list
 	 * @param data
 	 */
-	public void search(int data) {
+	public int search(int data) {
 		int count = 0;
 		Node temp = head;
 		while(temp != null) {
 			count++;
 			if(temp.data == data) {
 				System.out.println(data + " found at Position " + count);
-				return;
+				return count;
 			}
 			temp = temp.next;
 		}
 		System.out.println(data + " not found");
+		return 0;
+	}
+	
+	public void insertAfter(int node,int data) {
+		int position = search(node);
+		if(position != 0) {
+			addMiddle(data, position + 1);
+		}
 	}
 
 	/**
