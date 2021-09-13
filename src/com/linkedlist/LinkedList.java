@@ -168,9 +168,7 @@ public class LinkedList {
 
 		if(temp == null) {
 			return;
-		} else {
-			System.out.println("Linked List");
-		}
+		} 
 
 		while(temp.next != null) {
 			System.out.print(temp.data + "->");
